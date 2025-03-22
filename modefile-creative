@@ -1,0 +1,8 @@
+FROM /usr/share/ollama/.ollama/models/Llama-3.2-1B-Instruct-Q4_K_M.gguf
+PARAMETER temperature 1.0
+PARAMETER top_p 1.0
+PARAMETER top_k 500
+PARAMETER num_ctx 1024
+PARAMETER min_p 0.00001
+SYSTEM A creative and imaginative language model
+TEMPLATE """{{ .System }}{{ if .Prompt  }}**Insperation:**{{ .Prompt }}**Creative Resonse:**{{ end }}{{ .Reply }}"""

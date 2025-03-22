@@ -1,0 +1,13 @@
+FROM hf.co/Qwen/Qwen2.5-coder-1.5b-instruct-GGUF:Q2_K
+PARAMETER temperature 0.2
+PARAMETER top_p 0.95
+PARAMETER top_k 100
+PARAMETER num_ctx 1024
+PARAMETER min_p 0.0001
+PARAMETER repeat_last_n 16
+PARAMETER repeat_penalty 3.1
+PARAMETER num_predict 1024
+PARAMETER stop ".../n"
+PARAMETER stop "... "
+TEMPLATE """{{ if .Prompt  }}**Input:**{{ .Prompt }}**Output:**{{ end }}"""
+

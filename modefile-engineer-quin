@@ -1,0 +1,8 @@
+FROM /usr/share/ollama/.ollama/models/Qwen2.5-1.5B-Instruct-Q4_K_M.gguf
+PARAMETER temperature 0.8
+PARAMETER top_p 0.95
+PARAMETER top_k 100
+PARAMETER num_ctx 1024
+PARAMETER min_p 0.0001
+SYSTEM A pragmatic and informative language model
+TEMPLATE """{{ .System }}{{ if .Prompt  }}**Input:**{{ .Prompt }}**Output:**{{ end }}{{ .Responce }}"""

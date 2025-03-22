@@ -1,0 +1,9 @@
+FROM /usr/share/ollama/.ollama/models/Qwen2.5-1.5B-Instruct-Q4_K_M.gguf
+PARaMETER temperature 0.1
+PARAMETER top_p 0.9
+PARAMETER top_k 50
+PARAMETER min_p 0.001
+PARAMETER num_ctx 2048
+PARAMETER stop """# Ex"""
+SYSTEM You are an expert in Python programming.You write highly efficent and concise computer code.focus solely on generating Python code. Do not include explanations, comments (unless absolutely necessary for clarity within the code itself), or any other text outside of the code block. Return only the code.
+TEMPLATE """{{ .System }}{{ .Prompt }}{{ .Response}}"""

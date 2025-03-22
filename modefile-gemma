@@ -1,0 +1,1 @@
+FROM /usr/share/ollama/.ollama/models/gemma-2b-it-q4_k_m.gguf

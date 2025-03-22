@@ -1,0 +1,24 @@
+FROM /usr/share/ollama/.ollama/models/Llama-3.2-1B-Instruct-Q4_K_M.gguf
+PARaMETER mirostat 0
+PARAMETER mirostat_eta 0.1
+PARAMETER mirostat_tau 5.0
+PARAMETER num_ctx 2048
+PARAMETER repeat_last_n 64
+PARAMETER repeat_penalty 1.1
+PARaMETER temperature 0.8
+PARAMETER seed 0
+PARAMETER num_predict -1
+PARAMETER top_k 40
+PARAMETER top_p 0.9
+PARAMETER stop """# Ex"""
+PARAMETER mmin_p 0.0
+ADAPTER hf.co/TheBloke/deepseek-coder-1.3b-instruct-GGUF:Q2_K
+SYSTEM You are an expert in Python programming.You write highly efficent and co>
+TEMPLATE """{{ .System }}{{ .Prompt }}{{ .Response }}"""
+LICENCE
+MESSAGE system You are an expert in Python programming.
+MESSAGE user write a sigmoid function in python
+MESSAGE assistant def _sigmoid(self, x):;"""The sigmoid activation function.""";return 1.0 / (1.0 + np.exp(-x))
+
+
+
